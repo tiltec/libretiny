@@ -245,7 +245,7 @@ int MbedTLSClient::connect(
 
 	_sockTls = fd();
 	mbedtls_ssl_set_bio(_sslCtx, &_sockTls, mbedtls_net_send, mbedtls_net_recv, NULL);
-	mbedtls_net_set_nonblock((mbedtls_net_context *)&_sockTls);
+	//mbedtls_net_set_nonblock((mbedtls_net_context *)&_sockTls);
 
 	LT_HEAP_I();
 

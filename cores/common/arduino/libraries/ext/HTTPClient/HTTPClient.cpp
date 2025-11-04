@@ -1489,7 +1489,7 @@ void HTTPClient::setCookie(String date, String headerValue) {
 	headerValue.toLowerCase();
 
 	struct tm tm;
-	strptime(date.c_str(), HTTP_TIME_PATTERN, &tm);
+	//strptime(date.c_str(), HTTP_TIME_PATTERN, &tm);
 	cookie.date = mktime(&tm);
 
 	pos1 = headerValue.indexOf('=');
@@ -1512,7 +1512,7 @@ void HTTPClient::setCookie(String date, String headerValue) {
 		else
 			value = headerValue.substring(pos1);
 
-		strptime(value.c_str(), HTTP_TIME_PATTERN, &tm);
+		//strptime(value.c_str(), HTTP_TIME_PATTERN, &tm);
 		cookie.expires.date	 = mktime(&tm);
 		cookie.expires.valid = true;
 	}
